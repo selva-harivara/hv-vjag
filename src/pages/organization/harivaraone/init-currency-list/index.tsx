@@ -40,7 +40,7 @@ const CurrencyList: React.FC = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `${API_BASE_URL}/currency/?currency_type=domestic`
+          `${API_BASE_URL}/currency/?currency_type=international`
         );
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
@@ -120,7 +120,10 @@ const CurrencyList: React.FC = () => {
         <img
           src="/images/add.svg"
           alt="add"
-          onClick={() => navigate("/organization/harivaraone/currency/add")}
+          onClick={() =>
+            navigate("/organization/harivaraone/init-currency/add")
+          }
+          style={{ cursor: "pointer" }}
         />
         {/* <Button
           variant="contained"
@@ -190,7 +193,7 @@ const CurrencyList: React.FC = () => {
                         size="small"
                         onClick={() =>
                           navigate(
-                            `/organization/harivaraone/currency/edit/${row._id}`
+                            `/organization/harivaraone/init-currency/edit/${row._id}`
                           )
                         }
                       >
@@ -202,7 +205,7 @@ const CurrencyList: React.FC = () => {
                         size="small"
                         onClick={() =>
                           navigate(
-                            `/organization/harivaraone/currency/view/${row._id}`
+                            `/organization/harivaraone/init-currency/view/${row._id}`
                           )
                         }
                       >

@@ -47,7 +47,7 @@ const reference: CurrencyFormValues = {
   currencyName: "",
   currencyCode: "",
   currencySymbol: "",
-  currencyType: "domestic",
+  currencyType: "international",
   paymentMethods: [],
   voucherValue: [],
   icon: "",
@@ -556,7 +556,7 @@ export default function CurrencyEditor({
           <Button
             variant="text"
             color="primary"
-            onClick={() => navigate("/organization/harivaraone/currency")}
+            onClick={() => navigate("/organization/harivaraone/init-currency")}
             sx={{
               borderRadius: 2,
               fontWeight: 700,

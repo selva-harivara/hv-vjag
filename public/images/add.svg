@@ -8,7 +8,13 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_3897)">
-    <rect id="Rectangle_3897-2" data-name="Rectangle 3897" width="30" height="30" rx="15" transform="translate(9 6)" fill="#5f79d9"/>
+  <g id="Group_6812" data-name="Group 6812" transform="translate(-711 -90)">
+    <g transform="matrix(1, 0, 0, 1, 711, 90)" filter="url(#Rectangle_3897)">
+      <rect id="Rectangle_3897-2" data-name="Rectangle 3897" width="30" height="30" rx="15" transform="translate(9 6)" fill="#5f79d9"/>
+    </g>
+    <g id="df97f3f320e4be9a323ac0d1109bc0c9" transform="translate(722.502 98.502)">
+      <path id="Path_12993" data-name="Path 12993" d="M14.5,18V7" transform="translate(-2.002 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_12994" data-name="Path 12994" d="M7,14.5H18" transform="translate(0 -2.002)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
   </g>
 </svg>
