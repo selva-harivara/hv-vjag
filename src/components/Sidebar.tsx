@@ -13,6 +13,8 @@ import {
   Divider,
   ListItemButton,
   Popover,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import {
   MonetizationOn,
@@ -74,20 +76,9 @@ const sidebarMenuConfig: Record<string, any> = {
           ],
         },
       ],
-      "TDS Settings": [
+      "Tax Settings": [
         {
-          label: "TDS Settings",
-          icon: <Gavel />,
-          children: [
-            {
-              label: "TDS",
-              path: "/organization/tds-settings/tds",
-              icon: <Gavel />,
-            },
-          ],
-        },
-        {
-          label: "TDS Settings options",
+          label: "Tax Settings",
           icon: <Gavel />,
           children: [
             {
@@ -106,17 +97,40 @@ const sidebarMenuConfig: Record<string, any> = {
           children: [
             {
               label: "Business Details",
-              path: "/company-info/business-details",
+              path: "/organization/company-info/business-details",
               icon: <Business />,
             },
             {
               label: "GST Settings",
-              path: "/company-info/gst-settings",
+              path: "/organization/company-info/gst-settings",
               icon: <AccountBalance />,
             },
             {
               label: "Branches",
-              path: "/company-info/branches",
+              path: "/organization/company-info/branches",
+              icon: <Store />,
+            },
+          ],
+        },
+      ],
+      "App Menus": [
+        {
+          label: "App Menus",
+          icon: <Info />,
+          children: [
+            {
+              label: "Horizontal Menus (CA)",
+              path: "/organization/appMenus/horizontalCA",
+              icon: <Business />,
+            },
+            {
+              label: "Vertical Menus (CA)",
+              path: "/organization/appMenus/verticalCA",
+              icon: <AccountBalance />,
+            },
+            {
+              label: "Vertical Menus (VA)",
+              path: "/organization/appMenus/verticalVA",
               icon: <Store />,
             },
           ],
@@ -283,7 +297,7 @@ const sidebarMenuConfig: Record<string, any> = {
 };
 
 function isMenuActive(menu: MenuItem, pathname: string): boolean {
-  if (menu.path && menu.path === pathname) return true;
+  if (menu.path && pathname.startsWith(menu.path)) return true;
   if (menu.children)
     return menu.children.some((child: MenuItem) =>
       isMenuActive(child, pathname)
@@ -318,7 +332,9 @@ const Sidebar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { selected } = useModule(); // e.g. "Harivara One", "harivara", etc.
-  const [isCollapsed, setIsCollapsed] = React.useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [isCollapsed, setIsCollapsed] = React.useState(isMobile);
   const [openMenuKey, setOpenMenuKey] = React.useState<string | null>(null);
   const [submenuPopoverAnchor, setSubmenuPopoverAnchor] =
     React.useState<null | HTMLElement>(null);
@@ -332,6 +348,10 @@ const Sidebar: React.FC = () => {
       .then((res) => res.json())
       .then(setMenuConfig);
   }, []);
+
+  useEffect(() => {
+    setIsCollapsed(isMobile);
+  }, [isMobile]);
 
   // Get the menu config for the selected org
   const orgMenus = normalizedConfig[selected.toLowerCase()] || [];
