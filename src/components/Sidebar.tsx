@@ -19,21 +19,15 @@ import {
 import {
   MonetizationOn,
   Info,
-  List as ListIcon,
-  PhoneIphone,
-  Settings as SettingsIcon,
   AccountTree,
   AccountBalance,
   Store,
   Gavel,
-  Dashboard as DashboardIcon,
   ChevronLeft,
   ChevronRight,
-  Update as UpdateIcon,
   ExpandLess,
   ExpandMore,
   Business,
-  Public,
 } from "@mui/icons-material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useModule } from "../contexts/ModuleContext";
@@ -53,25 +47,15 @@ type MenuItem = {
 const sidebarMenuConfig: Record<string, any> = {
   Organization: [
     {
-      "Harivara One": [
+      "Professional Hub": [
         {
-          label: "Harivara One",
+          label: "Professional Hub",
           icon: <AccountTree />,
           children: [
             {
-              label: "Currency",
-              path: "/organization/harivaraone/currency",
+              label: "Professional Hub",
+              path: "/puja/professional",
               icon: <MonetizationOn />,
-            },
-            {
-              label: "Currency Intl",
-              path: "/organization/harivaraone/init-currency",
-              icon: <MonetizationOn />,
-            },
-            {
-              label: "Country Intl",
-              path: "/organization/harivaraone/country-inti",
-              icon: <Public />,
             },
           ],
         },
@@ -140,14 +124,14 @@ const sidebarMenuConfig: Record<string, any> = {
   ],
   harivara: [
     {
-      "Harivara settingas": [
+      "Professional Hub": [
         {
-          label: "settings",
+          label: "Professional Hub",
           icon: <AccountTree />,
           children: [
             {
-              label: "Currency",
-              path: "/harivara/setting",
+              label: "Professional Hub",
+              path: "/puja/professional",
               icon: <MonetizationOn />,
             },
           ],
@@ -391,7 +375,7 @@ const Sidebar: React.FC = () => {
                         )
                 }
                 sx={{
-                  color: openMenuKey === menu.label ? "#5F79D9" : "#7B7B93",
+                  color: "#1D887A",
                   fontWeight: openMenuKey === menu.label ? 700 : 400,
                   background:
                     openMenuKey === menu.label ? "#f0f4ff" : "transparent",
@@ -400,7 +384,7 @@ const Sidebar: React.FC = () => {
                 }}
               >
                 {menu.icon && (
-                  <ListItemIcon sx={{ color: "inherit" }}>
+                  <ListItemIcon sx={{ color: "#1D887A" }}>
                     {menu.icon}
                   </ListItemIcon>
                 )}
@@ -451,7 +435,7 @@ const Sidebar: React.FC = () => {
               onClick={() => menu.path && navigate(menu.path)}
               disabled={menu.disabled}
               sx={{
-                color: location.pathname === menu.path ? "#5F79D9" : "#7B7B93",
+                color: "#1D887A",
                 fontWeight: location.pathname === menu.path ? 700 : 400,
                 background:
                   location.pathname === menu.path ? "#f0f4ff" : "transparent",
@@ -460,7 +444,7 @@ const Sidebar: React.FC = () => {
               }}
             >
               {menu.icon && (
-                <ListItemIcon sx={{ color: "inherit" }}>
+                <ListItemIcon sx={{ color: "#1D887A" }}>
                   {menu.icon}
                 </ListItemIcon>
               )}
@@ -468,9 +452,7 @@ const Sidebar: React.FC = () => {
                 primary={
                   <Typography
                     fontWeight={location.pathname === menu.path ? 700 : 400}
-                    color={
-                      location.pathname === menu.path ? "#5F79D9" : "#7B7B93"
-                    }
+                    color="#1D887A"
                   >
                     {menu.label}
                   </Typography>
@@ -529,7 +511,7 @@ const Sidebar: React.FC = () => {
             <IconButton
               onClick={() => setIsCollapsed(!isCollapsed)}
               sx={{
-                color: "#5F79D9",
+                color: "#1D887A",
                 "&:hover": {
                   backgroundColor: "#f3f6fd",
                 },

@@ -20,24 +20,11 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import FirebaseTest from "./components/FirebaseTest";
 import { ModuleProvider } from "./contexts/ModuleContext";
-import CurrencyList from "./pages/organization/harivaraone/currency-list";
-import CurrencyEditor from "./pages/organization/harivaraone/currency-list/CurrencyEditor";
-import InitCurrencyList from "./pages/organization/harivaraone/init-currency-list";
-import InitCurrencyEditor from "./pages/organization/harivaraone/init-currency-list/CurrencyEditor";
-import CountryEditor from "./pages/organization/harivaraone/country-inti/CountryEditor";
-import CountryList from "./pages/organization/harivaraone/country-inti";
-import EntityList from "./pages/organization/harivaraone/entity-list";
-import EntityEditor from "./pages/organization/harivaraone/entity-list/EntityEditor";
-import TdsSettingsList from "./pages/organization/tdssettings/tds";
-import TdsSettingsEditor from "./pages/organization/tdssettings/tds/TdsSettingsEditor";
-import GstSettingsList from "./pages/organization/companyInfo/gst-settings";
-import GstEditor from "./pages/organization/companyInfo/gst-settings/gstEditor";
-import HorizontalCAList from "./pages/organization/appMenus/horizontalCA/list";
-import HzcaEditor from "./pages/organization/appMenus/horizontalCA/hzcaEditor";
-import VerticalCAList from "./pages/organization/appMenus/verticalCA/list";
-import VtcaEditor from "./pages/organization/appMenus/verticalCA/vtcaEditor";
-import VerticalVAList from "./pages/organization/appMenus/verticalVA/list";
-import VtVaEditor from "./pages/organization/appMenus/verticalVA/vtvaEditor";
+import ProfessionalHubList from "./pages/puja/professional/ProfessionalHubList";
+import ProfessionalHubAdd from "./pages/puja/professional/ProfessionalHubAdd";
+import LocationList from "./pages/organization/location/LocationList";
+import LocationAdd from "./pages/organization/location/LocationAdd";
+import PujareviewList from "./pages/puja/pujareview/PujareviewList";
 
 function App() {
   return (
@@ -60,149 +47,22 @@ function App() {
                 <Route index element={<Navigate to="/dashboard" replace />} />
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route
-                  path="organization/harivaraone/currency"
-                  element={<CurrencyList />}
+                  path="puja/professional"
+                  element={<ProfessionalHubList />}
                 />
                 <Route
-                  path="organization/harivaraone/currency/add"
-                  element={<CurrencyEditor mode="add" />}
+                  path="puja/professional/add"
+                  element={<ProfessionalHubAdd />}
                 />
                 <Route
-                  path="organization/harivaraone/currency/edit/:id"
-                  element={<CurrencyEditor mode="edit" />}
+                  path="organization/location"
+                  element={<LocationList />}
                 />
                 <Route
-                  path="organization/harivaraone/currency/view/:id"
-                  element={<CurrencyEditor mode="view" />}
+                  path="organization/location/add"
+                  element={<LocationAdd />}
                 />
-                <Route
-                  path="organization/harivaraone/init-currency"
-                  element={<InitCurrencyList />}
-                />
-                <Route
-                  path="organization/harivaraone/init-currency/add"
-                  element={<InitCurrencyEditor mode="add" />}
-                />
-                <Route
-                  path="organization/harivaraone/init-currency/edit/:id"
-                  element={<InitCurrencyEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/harivaraone/init-currency/view/:id"
-                  element={<InitCurrencyEditor mode="view" />}
-                />
-                <Route
-                  path="organization/harivaraone/country-inti/add"
-                  element={<CountryEditor mode="add" />}
-                />
-                <Route
-                  path="organization/harivaraone/country-inti/edit/:id"
-                  element={<CountryEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/harivaraone/country-inti/view/:id"
-                  element={<CountryEditor mode="view" />}
-                />
-                <Route
-                  path="organization/harivaraone/country-inti"
-                  element={<CountryList />}
-                />
-                <Route
-                  path="organization/harivaraone/entity-list"
-                  element={<EntityList />}
-                />
-                <Route
-                  path="organization/harivaraone/entity-list/add"
-                  element={<EntityEditor mode="add" />}
-                />
-                <Route
-                  path="organization/harivaraone/entity-list/edit/:id"
-                  element={<EntityEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/harivaraone/entity-list/view/:id"
-                  element={<EntityEditor mode="view" />}
-                />
-                <Route
-                  path="organization/tds-settings/tds"
-                  element={<TdsSettingsList />}
-                />
-                <Route
-                  path="organization/tds-settings/tds/add"
-                  element={<TdsSettingsEditor mode="add" />}
-                />
-                <Route
-                  path="organization/tds-settings/tds/edit/:id"
-                  element={<TdsSettingsEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/tds-settings/tds/view/:id"
-                  element={<TdsSettingsEditor mode="view" />}
-                />
-                <Route
-                  path="organization/company-info/gst-settings"
-                  element={<GstSettingsList />}
-                />
-                <Route
-                  path="organization/company-info/gst-settings/add"
-                  element={<GstEditor mode="add" />}
-                />
-                <Route
-                  path="organization/company-info/gst-settings/edit/:id"
-                  element={<GstEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/company-info/gst-settings/view/:id"
-                  element={<GstEditor mode="view" />}
-                />
-                <Route
-                  path="organization/appMenus/horizontalCA"
-                  element={<HorizontalCAList />}
-                />
-                <Route
-                  path="organization/appMenus/horizontalCA/add"
-                  element={<HzcaEditor mode="add" />}
-                />
-                <Route
-                  path="organization/appMenus/horizontalCA/edit/:id"
-                  element={<HzcaEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/appMenus/horizontalCA/view/:id"
-                  element={<HzcaEditor mode="view" />}
-                />
-                <Route
-                  path="organization/appMenus/verticalCA"
-                  element={<VerticalCAList />}
-                />
-                <Route
-                  path="organization/appMenus/verticalCA/add"
-                  element={<VtcaEditor mode="add" />}
-                />
-                <Route
-                  path="organization/appMenus/verticalCA/edit/:id"
-                  element={<VtcaEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/appMenus/verticalCA/view/:id"
-                  element={<VtcaEditor mode="view" />}
-                />
-                <Route
-                  path="organization/appMenus/verticalVA"
-                  element={<VerticalVAList />}
-                />
-                <Route
-                  path="organization/appMenus/verticalVA/add"
-                  element={<VtVaEditor mode="add" />}
-                />
-                <Route
-                  path="organization/appMenus/verticalVA/edit/:id"
-                  element={<VtVaEditor mode="edit" />}
-                />
-                <Route
-                  path="organization/appMenus/verticalVA/view/:id"
-                  element={<VtVaEditor mode="view" />}
-                />
+                <Route path="puja/pujareview" element={<PujareviewList />} />
                 <Route
                   path="*"
                   element={

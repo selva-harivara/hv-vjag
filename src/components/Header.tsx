@@ -52,7 +52,7 @@ const Header: React.FC = () => {
       position="fixed"
       elevation={0}
       sx={{
-        background: "linear-gradient(90deg, #7b8fff 0%, #b48cf2 100%)",
+        background: "linear-gradient(90deg, #2CA89A 0%, #3DB6C6 100%)",
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
     >

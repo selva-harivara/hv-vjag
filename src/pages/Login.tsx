@@ -65,11 +65,17 @@ const Login: React.FC = () => {
               flexDirection: "column",
               alignItems: "center",
               width: "100%",
+              boxShadow: "0px 3px 6px #00000029",
+              borderRadius: "20px",
+              opacity: 1,
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              WebkitBackdropFilter: "blur(10px)",
+              backdropFilter: "blur(10px)",
             }}
           >
             <Box mb={3}>
               <img
-                src="/images/login-logo.svg"
+                src="/images/logo-vjag.svg"
                 alt="Harivara Logo"
                 style={{ width: 90, height: 90, borderRadius: 16 }}
               />
